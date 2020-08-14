@@ -5,12 +5,12 @@
     ls [OPTION]... [FILE]... \
     List information about the FILEs (the current directory by default).
     1. **ls**: displays files in a bare format
-    ```
+    ```sh
     $ ls
     README.md
     ```
     2. **ls -l**: long format, displaying Unix file types, permissions, number of hard links, owner, group, size, last-modified date and filename
-    ```
+    ```sh
     $ ls -l
     total 0
     -rw-r--r-- 1 hassan hassan 0 Aug   13 23:55 README.md
@@ -18,7 +18,7 @@
 2. **pwd** - print name of current/working directory \
     pwd [OPTION]... \
     Print the full filename of the current working directory.
-    ```
+    ```sh
     $ pwd
     /home/hassan/os-lab-cheatsheet
     ```
@@ -28,7 +28,7 @@
 4. **mkdir** - make directories \
     mkdir [OPTION]... DIRECTORY... \
     Create the DIRECTORY(ies), if they do not already exist.
-    ```
+    ```sh
     $ mkdir test
     $ ls
     README.md  test
@@ -42,13 +42,22 @@
 6. **touch** - change file timestamps \
     touch [OPTION]... FILE...
     1. **touch**: a FILE argument that does not exist is created empty
-    ```
+    ```sh
     $ touch file.txt
     ```
 7. **cp** - copy files and directories \
     cp [OPTION]... [-T] SOURCE DEST \
     Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-    ```
+    ```sh
     $ cp README.md test
     ```
-##### Note: You should use `sudo` before your commad when you want to run the command under the root permission. Also switch to root user with `sudo -i`. Use `exit` or CTRL+D to exit from root shell.
+##### Note:
+1. You should use `sudo` before your commad when you want to run the command under the root permission. Also switch to root user with `sudo -i`. Use `exit` or CTRL+D to exit from root shell.
+2. In terminal, `.` means current working directory and `..` means parent of current directory.
+    ```sh
+    $ pwd
+    /home/hassan/os-lab-cheatsheet
+    $ cd ../..
+    $ pwd
+    /home
+    ```
