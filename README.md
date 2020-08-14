@@ -52,7 +52,7 @@
     $ cp README.md test
     ```
 ##### Note:
-1. You should use `sudo` before your commad when you want to run the command under the root permission. Also switch to root user with `sudo -i`. Use `exit` or CTRL+D to exit from root shell.
+1. You should use `sudo` before your commad when you want to run the command under the root permission. Also switch to root user with `sudo -i`. Use `exit` or `CTRL+D` to exit from root shell.
 2. In terminal, `.` means current working directory and `..` means parent of current directory.
     ```sh
     $ pwd
@@ -200,3 +200,41 @@
     64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=5 ttl=50 time=13.1 ms
     64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=6 ttl=50 time=12.10 ms
     ```
+
+### Lesson 5
+1. **Foreground** and **Background** Processes: \
+    Foreground processes refer to applications you are running that you are currently interacting with, and which applies equally to graphical user interfaces as it does to the command line. Background processes refer to applications that are running but not being interacted with by the user.
+2. **nano** - Nano's ANOther editor, an enhanced free Pico clone \
+    nano is a small and friendly editor.
+    1. **nano FILE**: open FILE with nano (create the FILE if is not exists)
+    ```sh
+    $ nano script.sh
+    ```
+3. **cat** - concatenate files and print on the standard output \
+    cat [OPTION]... [FILE]... \
+    Concatenate FILE(s) to standard output.
+    ```sh
+    $ cat script.sh
+    ping google.com > res.out
+    ```
+4. **jobs** - display the status of jobs in the current shell
+    ```sh
+    $ jobs
+    [1]  + suspended  ./script.sh
+    ```
+5. **bg** - move jobs to the background \
+    1. **bg %jobID**
+    ```sh
+    $ bg %1
+    [1]  + 28975 continued  ./script.sh
+    ```
+6. **fg** - move jobs to the foreground \
+    1. **fg %jobID**
+    ```sh
+    $ fg %1
+    [1]  + 28975 running    ./script.sh
+    ```
+#### Note:
+1. You can suspend a job with `CTRL+Z`
+2. You can end a job with `CTRL+C`
+
