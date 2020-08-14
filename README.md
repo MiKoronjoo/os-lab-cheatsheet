@@ -95,3 +95,27 @@
     ```sh
     $ groupadd new_group
     ```
+5. **groups** - print the groups a user is in \
+    groups [OPTION]... [USERNAME]... \
+    Print group memberships for each USERNAME or, if no USERNAME is specified, for the current process (which may differ if the groups database has changed).
+    ```sh
+    $ groups hassan
+    hassan : hassan adm cdrom sudo dip plugdev lpadmin sambashare
+    ```
+6. **useradd** - create a new user or update default new user information \
+    useradd [options] LOGIN
+    useradd is a low level utility for adding users. On Debian, administrators should usually use adduser(8) instead.
+7. **adduser**, **addgroup** - add a user or group to the system \
+    adduser [options] user group \
+    adduser and addgroup add users and groups to the system according to command line options and configuration information in /etc/adduser.conf. They are friendlier front ends to the low  level  tools like  **useradd**,  **groupadd**  and  **usermod**  programs.
+    ```sh
+    $ adduser new_user
+    ```
+7. **usermod** - modify a user account \
+    usermod [options] LOGIN \
+    The usermod command modifies the system account files to reflect the changes that are specified on the command line.
+    1. **usermod -G GROUP1[,GROUP2,...[,GROUPN]]]**: new list of supplementary GROUPS
+    2. **usermod -a USER**: add the USER to the supplementary group(s). Use only with the -G option
+    ```sh
+    $ usermod -G new_group -a new_user
+    ```
