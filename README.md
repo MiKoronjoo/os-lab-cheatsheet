@@ -1,13 +1,14 @@
 # OS LAB cheat sheet
 
 ### Table of Contents
-| No. | Topic |
+| Section | Topic |
 |---- | :---------:
 | [**Lesson 1**](#lesson-1) | basic terminal commands |
 | [**Lesson 2**](#lesson-2) | file permissions & groups |
 | [**Lesson 3**](#lesson-3) | ps command |
 | [**Lesson 4**](#lesson-4) | kill & ping |
 | [**Lesson 5**](#lesson-5) | foreground and background |
+| [**Research 1**](#research-1) | NI vs PRI & daemon |
 
 -------------------------------------------------------------------
 
@@ -245,7 +246,18 @@
     $ fg %1
     [1]  + 28975 running    ./script.sh
     ```
-#### Note:
-1. You can suspend a job with `CTRL+Z`
-2. You can end a job with `CTRL+C`
+    #### Note:
+    1. You can suspend a job with `CTRL+Z`
+    2. You can end a job with `CTRL+C`
 
+### Research 1
+- **Nice Value** and **Priority** \
+    PRI is the priority level. The lower the PRI, the higher the priority of the process will be. \
+    PRI is calculated as follows:
+    - for normal processes: `PRI = 20 + NI` (NI is nice and ranges from -20 to 19)
+    - for real time processes: `PRI = - 1 - real_time_priority` (real_time_priority ranges from 1 to 99) \
+    The nice value is a "global" mechanism, whereas priority is relevant for the task switcher _right now_.
+- **Daemon Process** \
+    A daemon process is a background process that is not under the direct control of the user. This process is usually started when the system is bootstrapped and it terminated with the system shut down. \
+    In Unix, the names of daemons conventionally end with the letter _d_, for clarification that the process is in fact a daemon, and for differentiation between a daemon and a normal program.
+    
