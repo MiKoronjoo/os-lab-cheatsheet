@@ -157,3 +157,46 @@
     19245 pts/3    R+     0:00 ps -r
     ```
     5. **ps -e**: all processes
+    6. **ps aux**: \
+        a = show processes for all users \
+        u = display the process's user/owner \
+        x = also show processes not attached to a terminal \
+        use **grep** for searching from command output
+    ```sh
+    $ ps aux | grep zoom
+    hassan   13232 33.9  3.9 5151328 484560 tty2   SLl+ 14:41  43:40 /opt/zoom/zoom
+    hassan   22290  0.0  0.0  20476  2900 pts/3    S+   16:50   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn zoom
+    ```
+
+### Lesson 4
+1. **kill** - send a signal to a process \
+    kill [options] <pid> [...] \
+    The  default  signal  for kill is TERM. Use -l or -L to list available signals.
+    ```sh
+    $ kill -l
+    HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS
+    ```
+    1. **kill PID**: terminate a process with PID
+    ```sh
+    $ kill 13232
+    ```
+    2. **killall PNAME**: terminate all processes with PNAME
+    ```sh
+    $ killall zoom
+    ```
+2. **xkill** - kill a client by its X resource \
+    xkill is a utility used for force-quitting GUI apps. It is handy when some app isn't responding or is causing your system to work abnormally.
+3. **pstree** - display a tree of processes \
+    pstree shows running processes as a tree.
+4. **ping** - send ICMP ECHO_REQUEST to network hosts \
+    ping uses the ICMP protocol's mandatory ECHO_REQUEST datagram to elicit an ICMP ECHO_RESPONSE from a host or gateway. 
+    ```sh
+    $ ping api.telegram.org
+    PING api.telegram.org (149.154.167.220) 56(84) bytes of data.
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=1 ttl=50 time=12.9 ms
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=2 ttl=50 time=13.6 ms
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=3 ttl=50 time=13.1 ms
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=4 ttl=50 time=12.10 ms
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=5 ttl=50 time=13.1 ms
+    64 bytes from 149.154.167.220 (149.154.167.220): icmp_seq=6 ttl=50 time=12.10 ms
+    ```
