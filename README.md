@@ -119,3 +119,36 @@
     ```sh
     $ usermod -G new_group -a new_user
     ```
+
+### Lesson 3
+1. **ps** - report a snapshot of the current processes. \
+    ps [options] \
+    ps displays information about a selection of the active processes.
+    ```sh
+    $ ps
+      PID TTY          TIME CMD
+    18920 pts/3    00:00:00 zsh
+    18968 pts/3    00:00:00 ps
+    ```
+    1. **ps -f**: full-format, including command lines
+    ```sh
+    $ ps -f
+    UID        PID  PPID  C STIME TTY          TIME CMD
+    hassan   18920 18534  7 16:04 pts/3    00:00:00 zsh
+    hassan   18956 18920  0 16:04 pts/3    00:00:00 ps -f
+    ```
+    2. **ps -t**: all processes on this terminal
+    ```sh
+    $ ps -t
+      PID TTY      STAT   TIME COMMAND
+    18920 pts/3    Ss     0:00 zsh
+    19193 pts/3    R+     0:00 ps -t
+    ```
+    3. **ps -r**: only running processes
+    ```sh
+    $ ps -r
+      PID TTY      STAT   TIME COMMAND
+    19245 pts/3    R+     0:00 ps -r
+    ```
+    4. **ps -e**: all processes
+    
