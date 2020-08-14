@@ -130,25 +130,30 @@
     18920 pts/3    00:00:00 zsh
     18968 pts/3    00:00:00 ps
     ```
-    1. **ps -f**: full-format, including command lines
+    1. **ps -l**: long format
+    ```sh
+    F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+    0 S  1000 19749 19738  0  80   0 -  6679 sigsus pts/2    00:00:00 zsh
+    4 R  1000 19962 19749  0  80   0 -  5709 -      pts/2    00:00:00 ps
+    ```
+    2. **ps -f**: full-format, including command lines
     ```sh
     $ ps -f
     UID        PID  PPID  C STIME TTY          TIME CMD
     hassan   18920 18534  7 16:04 pts/3    00:00:00 zsh
     hassan   18956 18920  0 16:04 pts/3    00:00:00 ps -f
     ```
-    2. **ps -t**: all processes on this terminal
+    3. **ps -t**: all processes on this terminal
     ```sh
     $ ps -t
       PID TTY      STAT   TIME COMMAND
     18920 pts/3    Ss     0:00 zsh
     19193 pts/3    R+     0:00 ps -t
     ```
-    3. **ps -r**: only running processes
+    4. **ps -r**: only running processes
     ```sh
     $ ps -r
       PID TTY      STAT   TIME COMMAND
     19245 pts/3    R+     0:00 ps -r
     ```
-    4. **ps -e**: all processes
-    
+    5. **ps -e**: all processes
