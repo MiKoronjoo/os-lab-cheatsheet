@@ -1,5 +1,16 @@
 # OS LAB cheat sheet
 
+### Table of Contents
+| No. | Topic |
+|---- | :---------:
+| [**Lesson 1**](#lesson-1) | basic terminal commands |
+| [**Lesson 2**](#lesson-2) | file permissions & groups |
+| [**Lesson 3**](#lesson-3) | ps command |
+| [**Lesson 4**](#lesson-4) | kill & ping |
+| [**Lesson 5**](#lesson-5) | foreground and background |
+
+-------------------------------------------------------------------
+
 ### Lesson 1
 1. **ls** - list directory contents \
     ls [OPTION]... [FILE]... \
@@ -222,13 +233,13 @@
     $ jobs
     [1]  + suspended  ./script.sh
     ```
-5. **bg** - move jobs to the background \
+5. **bg** - move jobs to the background
     1. **bg %jobID**
     ```sh
     $ bg %1
     [1]  + 28975 continued  ./script.sh
     ```
-6. **fg** - move jobs to the foreground \
+6. **fg** - move jobs to the foreground
     1. **fg %jobID**
     ```sh
     $ fg %1
