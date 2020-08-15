@@ -9,6 +9,7 @@
 | [**Lesson 4**](#lesson-4) | kill & ping |
 | [**Lesson 5**](#lesson-5) | foreground and background |
 | [**Research 1**](#research-1) | NI vs PRI & daemon |
+| [**Lesson 6**](#lesson-6) | nice and renice |
 
 -------------------------------------------------------------------
 
@@ -260,4 +261,28 @@
 - **Daemon Process** \
     A daemon process is a background process that is not under the direct control of the user. This process is usually started when the system is bootstrapped and it terminated with the system shut down. \
     In Unix, the names of daemons conventionally end with the letter _d_, for clarification that the process is in fact a daemon, and for differentiation between a daemon and a normal program.
+    
+### Lesson 6
+1. **top** - display Linux processes \
+    The top program provides a dynamic real-time  view  of  a  running system. It can display system summary information as well as a list of processes or threads currently being managed by the  Linux kernel. \
+    Use `q` or `CTRL+C` to exit from top.
+2. **nice** - run a program with modified scheduling priority \
+    nice [OPTION] [COMMAND [ARG]...]
+    1. **nice -n**: add integer N to the niceness (default 10)
+    ```sh
+    $ nice -n 15 nautilus
+    ```
+    #### Note: You should have root permission for negative nice values.
+    ```sh
+    $ sudo nice -n -8 nautilus
+    ```
+
+3. **renice** - alter priority of running processes \
+    renice [-n] priority [-g|-p|-u] identifier... \
+    renice alters the scheduling priority of one or more running processes. The first argument is the priority value to be used. The other arguments are interpreted as process IDs (by default), process group IDs, user IDs, or user names.
+    ```sh
+    $ renice 2 14862
+    14862 (process ID) old priority 0, new priority 2
+    ```
+
     
